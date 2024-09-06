@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Secundária</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Bem-vindo(a)!</h2>
+    <button id="saibaMaisBtn">Saiba Mais</button>
+
+    <script>
+        document.getElementById('saibaMaisBtn').addEventListener('click', function() {
+            alert("Cuidado ao compartilhar seus dados pessoais em sites não confiáveis.");
+        });
+
+        window.onbeforeunload = async function(event) {
+            // Faz a requisição para o PHP e busca os dados do usuário
+            const response = await fetch('recuperarDados.php');
+            const dadosUsuario = await response.json();
+
+            // Mostra os dados do usuário em um alerta
+            alert(`Dados do usuário:
+            Login: ${dadosUsuario.login}
+            Email: ${dadosUsuario.email}
+            Idade: ${dadosUsuario.idade}
+            Curso: ${dadosUsuario.curso}`);
+        };
+    </script>
+</body>
+</html>
+
