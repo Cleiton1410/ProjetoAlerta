@@ -7,27 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Bem-vindo(a)!</h2>
-    <button id="saibaMaisBtn">Saiba Mais</button>
+
+    <center><h2>Bem-vindo ao Projeto Alerta Seus Dados em Risco!</h2></center>
+    <center><h3>Aqui você pode saber mais sobre a importância da segurança dos seus dados.</h3></center>
+
+    <!-- Botão flutuante "Saiba Mais" -->
+    <button class="float-button" id="saibaMaisBtn">Saiba Mais</button>
 
     <script>
         document.getElementById('saibaMaisBtn').addEventListener('click', function() {
-            alert("Cuidado ao compartilhar seus dados pessoais em sites não confiáveis.");
+            alert('Cuidado! Não compartilhe seus dados em sites desconhecidos.');
         });
-
-        window.onbeforeunload = async function(event) {
-            // Faz a requisição para o PHP e busca os dados do usuário
-            const response = await fetch('recuperarDados.php');
-            const dadosUsuario = await response.json();
-
-            // Mostra os dados do usuário em um alerta
-            alert(`Dados do usuário:
-            Login: ${dadosUsuario.login}
-            Email: ${dadosUsuario.email}
-            Idade: ${dadosUsuario.idade}
-            Curso: ${dadosUsuario.curso}`);
-        };
     </script>
+
 </body>
 </html>
-

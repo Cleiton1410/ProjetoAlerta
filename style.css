@@ -1,21 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
+/* Estilos do botão flutuante "Saiba Mais" */
+.float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722; /* Cor laranja brilhante */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-form {
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    max-width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.float-button:hover {
+    background-color: #e64a19; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
+.float-button:active {
+    transform: scale(1); /* Volta ao tamanho normal ao clicar */
 }
