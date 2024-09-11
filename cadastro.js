@@ -14,3 +14,5 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     })
     .catch(error => console.error('Erro:', error));
 });
+
+document.getElementById('idade').type = 'text';
