@@ -32,7 +32,7 @@ main {
 
 .logo {
     height: 156.6px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .cad-principal {
@@ -40,7 +40,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin: 50px auto;
-    padding: 10px;
+    padding: 30px;
     background: #2d3b45e3;
     border-radius: 8px;
     width: 400px;
@@ -61,23 +61,23 @@ h5 {
     align-items: center;
     justify-content: center;
     background-color: #df0054 !important;
+    border-color: #df0054 !important;
 }
 
 .fa {
     color: #fff;
 }
 
-input {
+.campos {
     width: 85%;
     padding: 8px;
-    margin: 8px 0;
     box-sizing: border-box;
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
     border: none;
 }
 
-.input-group input:focus {
+.input-group .campos:focus {
     outline: none;
     border: none;
 }

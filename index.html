@@ -25,23 +25,41 @@
                 <form id="cadastroForm" action="cadastro.php" method="POST">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-user-o" aria-hidden="true"></i></span>
-                        <input type="text" id="login" placeholder="Login" name="login" required><br>
+                        <input class="campos" type="text" id="login" placeholder="Login" name="login" required><br>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        <input type="password" id="senha" placeholder="Senha" name="senha" required><br>
+                        <input class="campos" type="password" id="senha" placeholder="Senha" name="senha" required><br>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-envelope-o" aria-hidden="true"></i></i></span>
-                        <input type="email" id="email" placeholder="E-mail" name="e-mail" required><br>
+                        <input class="campos" type="email" id="email" placeholder="E-mail" name="e-mail" required><br>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
-                        <input type="text" id="idade" placeholder="Idade" name="idade" required><br>
+                        <input class="campos" type="date" id="idade" placeholder="Idade" name="idade" required>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                        <input type="text" id="curso" placeholder="Curso" name="curso" required><br>
+                        <select class="campos" id="curso" name="opcoes">
+                            <option value="0" disabled selected>Selecione o Curso</option>
+                            <option value="1">Administração</option>
+                            <option value="2">Educação Física</option>
+                            <option value="3">Engenharia Elétrica</option>
+                            <option value="4">Medicina</option>
+                            <option value="5">Publicidade e Propaganda</option>
+                            <option value="6">Tecnologia em Gestão de Recursos Humanos</option>
+                            <option value="7">Ciências Contábeis</option>
+                            <option value="8">Enfermagem</option>
+                            <option value="9">Engenharia de Software</option>
+                            <option value="10">Odontologia</option>
+                            <option value="11">Tecnologia em Análise e Desenvolvimento de Sistemas</option>
+                            <option value="12">Direito</option>
+                            <option value="13">Engenharia Civil</option>
+                            <option value="14">Fisioterapia</option>
+                            <option value="15">Psicologia</option>
+                            <option value="16">Tecnologia em Estética e Cosmética</option>
+                        </select>
                     </div>
                     <div class="input-group mb-3">
                         <button type="submit">Cadastrar</button>
