@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf') format('truetype');
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
