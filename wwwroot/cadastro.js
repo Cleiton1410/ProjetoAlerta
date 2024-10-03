@@ -1,16 +1,25 @@
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    console.log(event)
     const form = event.target;
 
-    // Faz o envio do formulário para o PHP
+    let res = {};
+    for ([key, val] in new FormData(form).entries()) {
+        res[key] = val;
+    }
+    console.log(new FormData(form));
     fetch(form.action, {
         method: form.method,
-        body: new FormData(form)
+        body: JSON.stringify(res),
+        headers: {
+            'content-type': "application/json"
+        }
     })
     .then(response => response.text())
     .then(result => {
         alert("Cadastro realizado com sucesso!");
-        window.location.href = "telaSecundaria.html";
+        console.log(result);
+        // window.location.assign("telaSecundaria.html");
     })
     .catch(error => console.error('Erro:', error));
 });
