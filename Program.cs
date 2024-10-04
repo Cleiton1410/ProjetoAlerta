@@ -32,7 +32,7 @@ app.MapGet("/api/listar-todos", async context =>
 {
     try
     {
-        DataTable data = db.Query("SELECT * FROM dados");
+        DataTable data = db.Query("SELECT * FROM dado");
         List<Dado> result = [];
         foreach (DataRow row in data.Rows)
         {
@@ -40,7 +40,7 @@ app.MapGet("/api/listar-todos", async context =>
             {
                 id = row.Field<int>(data.Columns[0]),
                 idade = row.Field<int>(data.Columns[1]),
-                curso = row.Field<string>(data.Columns[2]) ?? ""
+                curso = (Curso)row.Field<int>(data.Columns[2])
             });
         }
         await context.Response.WriteAsJsonAsync(result);
@@ -69,8 +69,18 @@ app.MapGet("/api/ip", async context => {
     }
 });
 
-// app.MapPost("/api/register", async (context) => {
-//     await context.Request.ReadFromJsonAsync();
-//     await db.InsertDado();
-// });
+app.MapPost("/api/cadastro", async (context) => {
+    var pessoa = await context.Request.ReadFromJsonAsync<Pessoa>();
+    if (pessoa == null) {
+        context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+        await context.Response.WriteAsync("Dados Inválidos");
+        return;
+    }
+    int id = await db.InsertDado(pessoa.curso, pessoa.idade);
+    await context.Response.WriteAsync(id.ToString());
+});
+
 app.Run();
+
+
+

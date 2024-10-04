@@ -22,7 +22,7 @@
                 <div>
                     <h5>Cadastre-se e adquira 5 HORAS Complementares</h5>
                 </div>
-                <form id="cadastroForm" action="cadastro.php" method="POST">
+                <form id="cadastroForm">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-user-o" aria-hidden="true"></i></span>
                         <input class="campos" type="text" id="login" placeholder="Login" name="login" required><br>
@@ -33,15 +33,15 @@
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-envelope-o" aria-hidden="true"></i></i></span>
-                        <input class="campos" type="email" id="email" placeholder="E-mail" name="e-mail" required><br>
+                        <input class="campos" type="email" id="email" placeholder="E-mail" name="email" required><br>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
-                        <input class="campos" type="date" id="idade" placeholder="Data nascimento" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
+                        <input class="campos" type="date" id="idade" placeholder="Data nascimento" name="datanasc" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id=""><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                        <select class="campos" id="curso" name="opcoes">
+                        <select class="campos" id="curso" name="curso">
                             <option value="0" disabled selected>Selecione o Curso</option>
                             <option value="1">Administração</option>
                             <option value="2">Educação Física</option>
@@ -69,7 +69,7 @@
         </div>
     </main>
     <footer>
-        
+
     </footer>
     <script src="cadastro.js"></script>
 </body>

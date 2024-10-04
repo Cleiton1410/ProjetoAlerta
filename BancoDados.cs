@@ -15,14 +15,14 @@ public class BancoDados
         cmd.CommandText = @"
             CREATE TABLE IF NOT EXISTS dado (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                curso TEXT,
+                curso INTEGER,
                 idade INTEGER
             )
         ";
         cmd.ExecuteNonQuery();
     }
 
-    public async Task<int> InsertDado(string curso, int idade) {
+    public async Task<int> InsertDado(Curso curso, int idade) {
         SQLiteCommand cmd;
         cmd = sqlite.CreateCommand();
         cmd.CommandText = @"
@@ -34,7 +34,14 @@ public class BancoDados
         cmd.Parameters.AddWithValue("$curso", curso);
 
         var res = await cmd.ExecuteReaderAsync();
-        return res.GetInt32(0);
+        if (!res.Read()) {
+            throw new Exception("Ocorreu um erro inesperado ao tentar salvar dados, tente novamente mais tarde");
+        }
+        int id = res.GetInt32(0);
+
+        res.Close();
+
+        return id;
     }
 
     public Task<int> Execute(string query)
