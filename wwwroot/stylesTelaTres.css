@@ -1,0 +1,150 @@
+/* Ajuste geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222221;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  
+}
+
+@font-face {
+  font-family: "Rustic";
+  src: url(./fontes/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Glacial";
+  src: url(./fontes/GlacialIndifference-Regular.otf) format("opentype");
+}
+
+h1 {
+  font-size: 36px;
+  font-family: Rustic;
+  color: #f0930d;
+}
+
+h2 {
+  font-family: Rustic;
+  color: #f0930d;
+}
+
+p {
+  font-family: Glacial;
+  color: white;
+}
+
+/* Conteúdo principal */
+.conteudo {
+  margin-top: 3%;
+  margin-left: 19%;
+  max-width: 550px;
+  }
+
+.img-logo-alerta {
+  left: 100%;
+}
+
+.logo-alerta {
+  margin-left: 25px;
+  width: 200px;
+}
+
+/* Topico */
+.topico {
+  margin: 80px auto;
+  margin-left: 33.5%;
+  width: 555px;
+  padding: 5px;
+  margin-top: -50px;
+}
+
+/* Listras Diagonais - Usando Position Absolute */
+.listra-diagonal,
+.listra-diagonal2 {
+  position: absolute;
+  width: 30vw; /* Responsivo à largura da tela */
+  height: auto;
+}
+
+/* Listra no canto inferior esquerdo */
+.listra-diagonal {
+  bottom: -80px;  /* Fixa no fundo */
+  left: -120px;    /* Fixa no lado esquerdo */
+}
+
+/* Listra no canto superior direito */
+.listra-diagonal2 {
+  top: -100px;    /* Fixa no topo */
+  right: -10px;  /* Fixa no lado direito */
+}
+
+/* Listras Verticais */
+.listra-vertical {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 1175px) {
+  main {
+    flex-direction: column;
+  }
+  .img-logo-alerta{
+    text-align: center;
+  }
+  .conteudo {
+    text-align: center;
+    margin-left: 5%;
+    max-width: 100%;
+  }
+  .listra-vertical {
+    max-width: 93%;
+    height: auto;
+  }
+  .topico {
+    margin: 20px auto;
+    max-width: 90%;
+    margin-left: 5%;
+  }
+
+  .listra-diagonal,
+  .listra-diagonal2 {
+    display: none; /* quando a tela for menor que 1175px as listras desapareceram */
+  }
+}
+
+@media (max-width: 320px) {
+
+  .img-logo-alerta{
+    text-align: center;
+  }
+  .conteudo {
+    text-align: center;
+    margin-left: 5%;
+    max-width: 100%;
+  }
+
+
+  .topico {
+    margin: 20px auto;
+    margin-left: 5%;
+    max-width: 100%;
+  }
+
+  .listra-diagonal,
+  .listra-diagonal2 {
+   display: none;      /* quando a tela for menor que 320px as listras desapareceram */
+  }
+}
