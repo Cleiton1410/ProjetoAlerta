@@ -16,7 +16,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin-top: 25px;
-  
 }
 
 @font-face {
@@ -47,13 +46,14 @@ p {
 
 /* Conteúdo principal */
 .conteudo {
-  margin-top: 3%;
-  margin-left: 19%;
-  max-width: 550px;
-  }
+  margin: 10px auto;
+  margin-left: 33.5%;
+  width: 555px;
+  padding: 5px;
+}
 
 .img-logo-alerta {
-  left: 100%;
+  position: absolute;
 }
 
 .logo-alerta {
@@ -63,31 +63,29 @@ p {
 
 /* Topico */
 .topico {
-  margin: 80px auto;
+  margin: 20px auto;
   margin-left: 33.5%;
   width: 555px;
   padding: 5px;
-  margin-top: -50px;
 }
 
 /* Listras Diagonais - Usando Position Absolute */
-.listra-diagonal,
-.listra-diagonal2 {
+.listra_diagonal,
+.listra_diagonal2 {
   position: absolute;
-  width: 30vw; /* Responsivo à largura da tela */
-  height: auto;
+  margin-top: -25px;
 }
-
 /* Listra no canto inferior esquerdo */
 .listra-diagonal {
-  bottom: -80px;  /* Fixa no fundo */
-  left: -120px;    /* Fixa no lado esquerdo */
+  margin-top: 124%;
+  width: 380px;
+  margin-left:0px ;
 }
 
 /* Listra no canto superior direito */
 .listra-diagonal2 {
-  top: -100px;    /* Fixa no topo */
-  right: -10px;  /* Fixa no lado direito */
+  width: 350px;
+  margin-left: 1178.05px;
 }
 
 /* Listras Verticais */
@@ -101,7 +99,8 @@ p {
   main {
     flex-direction: column;
   }
-  .img-logo-alerta{
+  .img-logo-alerta {
+    position: relative;
     text-align: center;
   }
   .conteudo {
@@ -126,8 +125,7 @@ p {
 }
 
 @media (max-width: 320px) {
-
-  .img-logo-alerta{
+  .img-logo-alerta {
     text-align: center;
   }
   .conteudo {
@@ -135,7 +133,6 @@ p {
     margin-left: 5%;
     max-width: 100%;
   }
-
 
   .topico {
     margin: 20px auto;
@@ -145,6 +142,6 @@ p {
 
   .listra-diagonal,
   .listra-diagonal2 {
-   display: none;      /* quando a tela for menor que 320px as listras desapareceram */
+    display: none; /* quando a tela for menor que 320px as listras desapareceram */
   }
 }
