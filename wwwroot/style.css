@@ -87,7 +87,7 @@ h5 {
     border: none;
 }
 
-button {
+.button {
     background-color: #df0054;
     color: white;
     border: none;
@@ -98,6 +98,33 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button:hover {
     background-color: #e64a19;
+}
+
+
+
+
+
+
+
+.segundaTela{
+    background-color: rgb(34, 34, 33);
+    padding: 0px;
+}
+.logoAlerta{
+    flex-direction: column;
+}
+
+.float-button{
+    margin-top: 60px;
+    background-color:  transparent;
+    border-color: transparent;
+    background-image: url(img/saibaMais.png);
+    width: 210px;
+    height: 80px;
+    padding: 0px;
+}
+.float-button:hover{
+    filter: grayscale(100%)
 }

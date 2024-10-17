@@ -52,3 +52,5 @@ function submitForm(event) {
 
 document.getElementById("cadastroForm").addEventListener("submit", submitForm);
 document.getElementById("idade").type = "text";
+
+
