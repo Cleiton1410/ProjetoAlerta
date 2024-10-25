@@ -72,12 +72,12 @@
   /* Listras Diagonais - Usando Position Absolute */
   .listra_diagonal,
   .listra_diagonal2 {
-    position: absolute;
+    position:fixed;
     margin-top: -25px;
   }
   /* Listra no canto inferior esquerdo */
   .listra-diagonal {
-    margin-top: 124%;
+    margin-top: 175%;
     width: 380px;
     margin-left:0px ;
   }
@@ -85,7 +85,9 @@
   /* Listra no canto superior direito */
   .listra-diagonal2 {
     width: 350px;
-    margin-left: 1178.05px;
+    height: auto;
+    margin-top: 150;
+    margin-left: 1600.00px;
   }
   
   /* Listras Verticais */
@@ -109,7 +111,7 @@
       max-width: 100%;
     }
     .listra-vertical {
-      max-width: 93%;
+      max-width: 100%;
       height: auto;
     }
     .topico {

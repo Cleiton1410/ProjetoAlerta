@@ -1,0 +1,111 @@
+.segundaTela {
+    background-color: rgb(34, 34, 33);
+    padding: 0;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Preenche a altura total da tela */
+}
+
+.logoAlerta {
+    display: flex; /* Ativa o Flexbox para a logo */
+    flex-direction: column; /* Alinha a logo em coluna, se necessário */
+    align-items: center; /* Centraliza a logo horizontalmente */
+}
+
+.float-button {
+    margin-top: 20px; /* Reduzido para deixar o botão mais próximo da logo */
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url(img/saibaMais.png);
+    width: 210px;
+    height: 80px;
+    padding: 0;
+}
+
+.float-button:hover {
+    filter: grayscale(100%);
+}
+
+/* Listras Diagonais - */
+.listra_diagonal,
+.listra_diagonal2 {
+position: fixed; 
+}
+
+/* Listra no canto inferior esquerdo */
+.listra_diagonal {
+    bottom: 0;
+    left: 0; 
+    width:20px;
+    height: 350px;
+    margin-top: 150;
+}
+
+/* Listra no canto superior direito */
+.listra_diagonal2 {
+    top: 0; /* Alinhe ao topo */
+    right: 0; /* Alinhe à direita */
+    width: 350px;
+    height: 100px;
+    margin-top: 150;
+}
+
+/* Listras Verticais */
+.listra-vertical {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 1175px) {
+    .segundaTela {
+        flex-direction: column;
+    }
+    .img-logo-alerta {
+        position: relative;
+        text-align: center;
+    }
+    .conteudo {
+        text-align: center;
+        margin-left: 5%;
+        max-width: 100%;
+    }
+    .listra-vertical {
+        max-width: 100%;
+        height: auto;
+    }
+    .topico {
+        margin: 20px auto;
+        max-width: 90%;
+        margin-left: 5%;
+    }
+
+    .listra_diagonal,
+    .listra_diagonal2 {
+        display: none; /* quando a tela for menor que 1175px as listras desapareceram */
+    }
+}
+
+@media (max-width: 320px) {
+    .img-logo-alerta {
+        text-align: center;
+    }
+    .conteudo {
+        text-align: center;
+        margin-left: 5%;
+        max-width: 100%;
+    }
+
+    .topico {
+        margin: 20px auto;
+        margin-left: 5%;
+        max-width: 100%;
+    }
+
+    .listra_diagonal,
+    .listra_diagonal2 {
+        display: none; /* quando a tela for menor que 320px as listras desapareceram */
+    }
+}

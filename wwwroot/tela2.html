@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tela Secundária</title>
+        <link rel="stylesheet" href="tela2.css" />
+    </head>
+
+    <body>
+        <main>
+            <div class="segundaTela">
+                <div class="logoAlerta">
+                    <img
+                        src="img/logoAlerta.png"
+                        alt="logoAlerta"
+                        style="width: 350px; height: 300px"
+                    />
+                </div>
+                <div class="listra_diagonal">
+                    <img
+                        src="./img/listra-diagonal.png"
+                        alt="listra-diagonal"
+                        class="listra-diagonal"
+                    />
+                    <!--Imagem da listra diagonal-->
+                </div>
+    
+                <div class="listra_diagonal2">
+                    <img
+                        src="./img/listra-diagonal.png"
+                        alt="listra-diagonal"
+                        class="listra-diagonal2"
+                    />
+                    <!--Imagem da listra diagonal-->
+                </div>
+                <a href="tela3.html">
+                    <button class="float-button" id="saibaMaisBtn"></button>
+                </a>
+            </div>
+            <!-- Botão flutuante "Saiba Mais" -->
+        </main>
+
+        <script>
+            let verificacao = true;
+            function funcao() {
+                if (verificacao) {
+                    vibrar(3);
+                    verificacao = false;
+                }
+            }
+
+            window.addEventListener("mousemove", funcao);
+            window.addEventListener("mousedown", funcao);
+
+            function vibrar(tempoInicial) {
+                if (tempoInicial != 0) {
+                    navigator.vibrate(tempoInicial);
+                    console.log("vibrou ", tempoInicial);
+                    setTimeout(
+                        () => vibrar(tempoInicial + 1000),
+                        tempoInicial * 1.5
+                    );
+                }
+                navigator.vibrate([0]);
+            }
+        </script>
+    </body>
+</html>
