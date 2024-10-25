@@ -72,5 +72,28 @@
 
     </footer>
     <script src="cadastro.js"></script>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Captura os valores de email e senha
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            // Salvando as informações no sessionStorage
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('senha', senha);
+
+            let cadastros = localStorage.getItem('cadastros');
+            if (cadastros === null) {
+                cadastros = 0; // Inicializa caso não exista
+            }
+            cadastros = parseInt(cadastros) + 1; // Incrementa a contagem
+            localStorage.setItem('cadastros', cadastros);
+
+            // Redireciona para a página de exibição
+            window.location.href = 'telaTerciaria.html';
+        });
+    </script>
 </body>
 </html>

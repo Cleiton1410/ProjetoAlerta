@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela Terciaria</title>
+    <link rel="stylesheet" href="./stylesTelaTres.css" />
+    <script src="cadastro.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="img-logo-alerta">
+        <img
+          src="./img/logo-alerta.png"
+          alt="logo-alerta"
+          class="logo-alerta"
+        />
+        <!--Imagem da logo Alerta-->
+      </div>
+
+      <div class="conteudo">
+        <img
+          src="./img/listra-vertical.png"
+          alt="listra-vertical"
+          class="listra-vertical"
+        />
+        <!--imagem da listra vertical que fica acima do titulo-->
+
+        <div class="titulo">
+          <h1>Previna-se para que isso não aconteça</h1>
+          <!--Titulo-->
+        </div>
+
+        <img
+          src="./img/listra-vertical.png"
+          alt="listra-vertical"
+          class="listra-vertical"
+        />
+        <!--imagem da listra vertical que fica abaixo do titulo-->
+      </div>
+
+      <div class="topico">
+        <h2>Dados Adquiridos:</h2>
+
+        <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+        <p><strong>Senha:</strong> <span id="senhaDisplay"></span></p>
+        <p><strong>IP:</strong> <span id="ipDisplay"></span></p>
+      </div>
+
+      <div class="topico">
+        <h2>Como acontecem os golpes em redes sociais:</h2>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
+          adipisci illum tempora voluptatem. Omnis quidem qui explicabo placeat
+          <!--Topico 2-->
+          quam dignissimos animi consequuntur eaque repellat sequi incidunt,
+          excepturi consectetur exercitationem cum.
+        </p>
+      </div>
+
+      <div class="topico">
+        <h2>Como evitar golpe e furto de seus dados:</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fuga
+          exercitationem autem praesentium soluta fugiat repellendus quae neque
+          <!--Topico 3-->
+          iusto. Ab dolores excepturi voluptas, maiores reprehenderit ipsum
+          minima similique! Omnis, iste!
+        </p>
+      </div>
+      <div class="listra_diagonal">
+        <img
+          src="./img/listra-diagonal.png"
+          alt="listra-diagonal"
+          class="listra-diagonal"
+        />
+        <!--Imagem da listra diagonal-->
+      </div>
+      <div class="listra_diagonal2">
+        <img
+          src="./img/listra-diagonal.png"
+          alt="listra-diagonal"
+          class="listra-diagonal2"
+        />
+        <!--Imagem da listra diagonal-->
+      </div>
+    </main>
+  </body>
+  <script>
+    // Exibindo email e senha armazenados no sessionStorage
+    document.getElementById("emailDisplay").textContent =
+      sessionStorage.getItem("email");
+    document.getElementById("senhaDisplay").textContent =
+      sessionStorage.getItem("senha");
+
+    // Pegando o IP do usuário via uma API externa (ex: ipify)
+    fetch("https://api.ipify.org?format=json")
+      .then((response) => response.json())
+      .then((data) => {
+        document.getElementById("ipDisplay").textContent = data.ip;
+      })
+      .catch((error) => {
+        console.error("Erro ao obter o IP:", error);
+      });
+
+    const cadastros = localStorage.getItem("cadastros");
+    document.getElementById("contadorDisplay").textContent = cadastros
+      ? cadastros
+      : 0;
+  </script>
+</html>
