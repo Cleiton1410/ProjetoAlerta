@@ -20,12 +20,12 @@ main {
 
 @font-face {
   font-family: "Rustic";
-  src: url(./fontes/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
+  src: url(./fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Glacial";
-  src: url(./fontes/GlacialIndifference-Regular.otf) format("opentype");
+  src: url(./fonts/GlacialIndifference-Regular.otf) format("opentype");
 }
 
 h1 {

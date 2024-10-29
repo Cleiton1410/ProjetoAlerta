@@ -11,49 +11,49 @@ body {
     padding: 0;
 }
 
-.imagem-unidep {
+.imagem-fundo {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/foto-unidep.jpg');
+    background-image: url('img/ALERTA.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
-    filter: grayscale(20%);
-    -webkit-filter: grayscale(20%);
+    z-index: -10;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    padding: 20px;
-    text-align: center;
+.imagem-fundo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.26)
 }
 
-.logo {
-    height: 156.6px;
-    padding-top: 40px;
+.container-geral {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .cad-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
-    padding: 30px;
+    margin: 10px auto;
+    padding: 25px;
     background: #2d3b45e3;
     border-radius: 8px;
     width: 400px;
-    min-width: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
 }
 
-h5 {
+.titulo-cadastro {
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -87,7 +87,22 @@ h5 {
     border: none;
 }
 
-.button {
+.campo-termos {
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    padding: 10px; max-height: 
+    150px; overflow: auto; 
+    width: 350px;
+}
+
+.conteudo-termos {
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+
+.botao-cadastrar {
     background-color: #df0054;
     color: white;
     border: none;
@@ -98,6 +113,66 @@ h5 {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #e64a19;
+.botao-cadastrar:hover {
+    color: #fc9a3f;
+    background-color: #c4044d;
+}
+
+.triangulo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 350px solid #2d3b45e3;
+    border-right: 650px solid transparent;
+    z-index: -9;
+}
+
+.triangulo-conteudo {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    text-align: left;
+    max-width: 750px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.conteudo {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.conteudo-principal {
+    color: rgb(223, 0, 84) ;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+@media (max-width: 900px) {
+    .cad-principal {
+        width: auto;
+    }
+    .logo-fundo {
+        display: none;
+    }
+
+    .triangulo {
+        border-bottom: 200px solid #2d3b45e3;
+        border-right: 650px solid transparent;
+    }
+
+    .triangulo-conteudo {
+        top: 50px;
+    }
+
+    .conteudo {
+        font-size: 14px;
+    }
 }
