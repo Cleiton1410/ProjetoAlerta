@@ -45,7 +45,7 @@ function submitForm(event) {
 
             // TODO: Salvar id e dados do form no localstorage (ver https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage)
 
-            // window.location.assign("telaSecundaria.html");
+            // window.location.assign("alerta.html");
         })
         .catch((error) => console.error("Erro:", error));
 }

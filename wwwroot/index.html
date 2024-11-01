@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -63,7 +63,7 @@
                             <h4 class="conteudo-termos">Termos e Condições de Uso</h4>
                             <p class="conteudo-termos">Última atualização: 28/10/2024</p>
                             <p class="conteudo-termos">1. Aceitação dos Termos Ao criar um cadastro em nossa plataforma, você concorda em cumprir estes termos e condições. Se não concordar com algum desses termos, não deverá se cadastrar. A aceitação dos termos é uma condição essencial para o uso da plataforma e, ao aceitá-los, você declara ter lido, entendido e concordado com todos os termos.</p>
-                            <p class="conteudo-termos">2. Elegibilidade Você declara que tem pelo menos 18 anos ou que possui autorização dos responsáveis legais para utilizar nossos serviços. Se você estiver registrando uma conta em nome de uma empresa ou organização, você declara que tem a autoridade para vincular essa entidade a estes termos. Caso contrário, você não poderá criar uma conta e deverá interromper imediatamente o uso da plataforma.</p>                            
+                            <p class="conteudo-termos">2. Elegibilidade Você declara que tem pelo menos 18 anos ou que possui autorização dos responsáveis legais para utilizar nossos serviços. Se você estiver registrando uma conta em nome de uma empresa ou organização, você declara que tem a autoridade para vincular essa entidade a estes termos. Caso contrário, você não poderá criar uma conta e deverá interromper imediatamente o uso da plataforma.</p>
                             <p class="conteudo-termos">3. Cadastro Para se cadastrar, você deve fornecer informações precisas e completas. As informações exigidas podem incluir, mas não se limitam a, nome, endereço de e-mail, telefone e uma senha. Você concorda em manter suas informações atualizadas e precisas. A empresa não se responsabiliza por problemas resultantes de informações incorretas ou desatualizadas.</p>
                             <p class="conteudo-termos">4. Segurança da Conta Você é responsável por manter a confidencialidade de sua senha e informações da conta. É sua responsabilidade garantir que a senha seja forte e não seja compartilhada com terceiros. Notifique-nos imediatamente sobre qualquer uso não autorizado de sua conta ou qualquer outra violação de segurança. A empresa não se responsabiliza por qualquer perda ou dano resultante do seu não cumprimento desta obrigação.</p>
                             <p class="conteudo-termos">5. Uso Permitido Você concorda em usar a plataforma apenas para fins legais e de acordo com todas as leis aplicáveis. Você não pode usar a plataforma para atividades ilegais, fraudulentas ou não autorizadas. Isso inclui, mas não se limita a, violação de direitos autorais, difamação, assédio, e qualquer comportamento que comprometa a segurança ou a integridade da plataforma.</p>
@@ -125,7 +125,7 @@
                             <p class="conteudo-termos">48. Validade e Divisibilidade Se qualquer disposição destes termos for considerada inválida ou inexequível, as disposições restantes permanecerão em pleno vigor e efeito. A disposição inválida será interpretada da forma que mais se aproxime da intenção original das partes.</p>
                             <p class="conteudo-termos">49. Aceitação Digital Você concorda que a aceitação destes termos pode ser feita eletronicamente e que a aceitação eletrônica terá a mesma validade e efeito que uma assinatura em papel.</p>
                             <p class="conteudo">50. Esse cadastro é falso.</p>
-                            <p class="conteudo-termos">51. Mudanças e Atualizações A empresa pode, a seu critério, atualizar ou modificar estes termos a qualquer momento. Quaisquer atualizações serão publicadas na plataforma e você será notificado por e-mail ou por meio de notificações na conta. A continuidade do uso da plataforma após a modificação dos termos indica sua aceitação das alterações.</p> 
+                            <p class="conteudo-termos">51. Mudanças e Atualizações A empresa pode, a seu critério, atualizar ou modificar estes termos a qualquer momento. Quaisquer atualizações serão publicadas na plataforma e você será notificado por e-mail ou por meio de notificações na conta. A continuidade do uso da plataforma após a modificação dos termos indica sua aceitação das alterações.</p>
                         </div>
                     </div>
                     <div>
@@ -146,32 +146,6 @@
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
     <script src="cadastro.js"></script>
-    <script>
-        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o envio padrão do formulário
-
-            // Captura os valores de email e senha
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-
-            // Salvando as informações no sessionStorage
-            sessionStorage.setItem('email', email);
-            sessionStorage.setItem('senha', senha);
-
-            let cadastros = localStorage.getItem('cadastros');
-            if (cadastros === null) {
-                cadastros = 0; // Inicializa caso não exista
-            }
-            cadastros = parseInt(cadastros) + 1; // Incrementa a contagem
-            localStorage.setItem('cadastros', cadastros);
-
-            // Redireciona para a página de exibição
-            window.location.href = 'telaTerciaria.html';
-        });
-    </script>
 </body>
 </html>
