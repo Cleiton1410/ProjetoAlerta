@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
                 <!--imagem da listra vertical que fica acima do titulo-->
 
                 <div class="titulo">
-                    <h1>Previna-se para que isso não aconteça</h1>
+                    <p class="estilo-titulo">Previna-se para que isso não aconteça</p>
                     <!--Titulo-->
                 </div>
 
@@ -41,15 +41,16 @@
             </div>
 
             <div class="topico">
-                <h2>Dados Adquiridos:</h2>
-
+                <p class="estilo-subtitulo">Dados Adquiridos:</p>
+                <p><strong>Login:</strong> <span id="loginDisplay"></span></p>
+                <p><strong>Senha:</strong> <span id="senhaDisplay"></span></p> 
                 <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
-                <p><strong>Senha:</strong> <span id="senhaDisplay"></span></p>
+                <p><strong>Idade:</strong> <span id="idadeDisplay"></span></p>
                 <p><strong>IP:</strong> <span id="ipDisplay"></span></p>
             </div>
 
             <div class="topico">
-                <h2>Como acontecem os golpes em redes sociais:</h2>
+                <p class="estilo-subtitulo">Como acontecem os golpes em redes sociais:</p>
 
                 <p>
                     <strong>Phishing:</strong> Criminosos enviam mensagens ou
@@ -80,7 +81,7 @@
             </div>
 
             <div class="topico">
-                <h2>Como evitar golpe e furto de seus dados:</h2>
+                <p class="estilo-subtitulo">Como evitar golpe e furto de seus dados:</p>
                 <p>
                     <!--Topico 1-->
                     <strong>Desconfie de mensagens suspeitas:</strong> Nunca
@@ -123,11 +124,17 @@
         </main>
     </body>
     <script>
-        // Exibindo email e senha armazenados no sessionStorage
-        document.getElementById("emailDisplay").textContent =
-            sessionStorage.getItem("email");
-        document.getElementById("senhaDisplay").textContent =
-            sessionStorage.getItem("senha");
+        function exibirDados() {
+            const dados = JSON.parse(localStorage.getItem('dadosCadastro'));
+            if (dados) {
+                document.getElementById("loginDisplay").textContent = dados.login;
+                document.getElementById("senhaDisplay").textContent = dados.senha;
+                document.getElementById("emailDisplay").textContent = dados.email;
+                document.getElementById("idadeDisplay").textContent = dados.idade;
+            }
+        }
+
+        window.onload = exibirDados;
 
         // Pegando o IP do usuário via uma API externa (ex: ipify)
         fetch("https://api.ipify.org?format=json")
@@ -139,10 +146,14 @@
                 console.error("Erro ao obter o IP:", error);
             });
 
-        const cadastros = localStorage.getItem("cadastros");
+        /*const cadastros = localStorage.getItem("cadastros");
         document.getElementById("contadorDisplay").textContent = cadastros
             ? cadastros
             : 0;
+        */
+
+        window.addEventListener('beforeunload', function() {
+            localStorage.clear();
+        });
     </script>
-    <script src="cadastro.js"></script>
 </html>

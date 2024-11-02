@@ -18,10 +18,20 @@ async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
 
+    const curso = formData.get("curso");
+    console.log("Valor do curso:", curso); // Verificação do valor capturado
+
+    // Verifica se o curso selecionado é "0", null ou undefined
+    if (!curso || curso === "0") {
+        alert("Por favor, selecione um curso válido.");
+        return;
+    }
+
+    const idade = formData.get("idade");
     const res = {
         curso: parseInt(formData.get("curso")),
-        datanasc: formData.get("datanasc"),
-        idade: calcularIdade(formData.get("datanasc")),
+        datanasc: idade,
+        idade: calcularIdade(idade),
         email: formData.get("email"),
         login: formData.get("login"),
         senha: formData.get("senha"),
@@ -37,11 +47,11 @@ async function submitForm(event) {
         });
 
         if (!response.ok) {
-            throw new Error(await response.text());
+            throw new Error("Erro ao enviar o cadastro, tente novamente mais tarde.");
+
         }
 
-        const result = await response.text();
-        alert("Cadastro realizado com sucesso!");
+        const result = await response.json();
         console.log(result);
 
         // Salvar id e dados do form no localstorage
@@ -50,9 +60,11 @@ async function submitForm(event) {
         salvarDados();
         
         // Redirecionar para a tela secundária
+        alert("Cadastro realizado com sucesso!");
         window.location.assign("alerta.html");
     } catch (error) {
         console.error("Erro:", error);
+        alert("Erro ao cadastrar: " + error.message);
     }
 }
 
@@ -60,19 +72,18 @@ function salvarDados() {
     const login = document.getElementById('login').value;
     const senha = document.getElementById('senha').value;
     const email = document.getElementById('email').value;
-    const dataNasc = document.getElementById('datanasc').value; // Corrigido para o id correto
+    const idade = document.getElementById('idade').value;
     const curso = document.getElementById('curso').value;
 
     const dadosCadastro = {
         login: login,
         senha: senha,
         email: email,
-        dataNasc: dataNasc,
+        idade: calcularIdade(idade),
         curso: curso,
     };
 
     localStorage.setItem('dadosCadastro', JSON.stringify(dadosCadastro));
-    alert('Cadastro salvo com sucesso!');
 }
 
 // Verificar se o id do usuário está no local storage
