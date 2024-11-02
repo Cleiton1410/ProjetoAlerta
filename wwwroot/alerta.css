@@ -1,21 +1,58 @@
-.segundaTela {
-    background-color: rgb(34, 34, 33);
+/* Ajuste geral */
+* {
+    margin: 0;
     padding: 0;
-    display: flex; /* Ativa o Flexbox */
-    flex-direction: column; /* Alinha os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da tela */
+    box-sizing: border-box;
 }
 
+body {
+    background-color: #222221;
+    margin: 0;
+    padding: 0;
+}
+
+.segundaTela {
+    background-color: #222221;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Fonte e cores */
+@font-face {
+    font-family: "Rustic";
+    src: url(./fontes/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Glacial";
+    src: url(./fontes/GlacialIndifference-Regular.otf) format("opentype");
+}
+
+h1, h2 {
+    font-size: 36px;
+    font-family: "Rustic";
+    color: #f0930d;
+}
+
+p {
+    font-family: "Glacial";
+    color: white;
+}
+
+/* Logo */
 .logoAlerta {
-    display: flex; /* Ativa o Flexbox para a logo */
-    flex-direction: column; /* Alinha a logo em coluna, se necessário */
-    align-items: center; /* Centraliza a logo horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Ajuste para distanciar da logo */
 }
 
 .float-button {
-    margin-top: 20px; /* Reduzido para deixar o botão mais próximo da logo */
+    margin-top: 20px;
     background-color: transparent;
     border-color: transparent;
     background-image: url(img/saibaMais.png);
@@ -28,28 +65,25 @@
     filter: grayscale(100%);
 }
 
-/* Listras Diagonais - */
-.listra_diagonal,
-.listra_diagonal2 {
-position: fixed; 
+/* Listras Diagonais */
+.listra_diagonal, .listra_diagonal2 {
+    position: fixed;
 }
 
 /* Listra no canto inferior esquerdo */
 .listra_diagonal {
-    bottom: 0;
-    left: 0; 
-    width:20px;
+    width: 380px;
     height: 350px;
-    margin-top: 150;
+    left: 0;
+    bottom: 0;
 }
 
 /* Listra no canto superior direito */
 .listra_diagonal2 {
-    top: 0; /* Alinhe ao topo */
-    right: 0; /* Alinhe à direita */
     width: 350px;
     height: 100px;
-    margin-top: 150;
+    top: 0;
+    right: 0;
 }
 
 /* Listras Verticais */
@@ -82,9 +116,8 @@ position: fixed;
         margin-left: 5%;
     }
 
-    .listra_diagonal,
-    .listra_diagonal2 {
-        display: none; /* quando a tela for menor que 1175px as listras desapareceram */
+    .listra_diagonal, .listra_diagonal2 {
+        display: none; /* Esconde as listras em telas menores */
     }
 }
 
@@ -104,8 +137,7 @@ position: fixed;
         max-width: 100%;
     }
 
-    .listra_diagonal,
-    .listra_diagonal2 {
-        display: none; /* quando a tela for menor que 320px as listras desapareceram */
+    .listra_diagonal, .listra_diagonal2 {
+        display: none;
     }
 }
