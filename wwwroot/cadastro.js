@@ -19,9 +19,7 @@ async function submitForm(event) {
     const formData = new FormData(form);
 
     const curso = formData.get("curso");
-    console.log("Valor do curso:", curso); // Verificação do valor capturado
 
-    // Verifica se o curso selecionado é "0", null ou undefined
     if (!curso || curso === "0") {
         alert("Por favor, selecione um curso válido.");
         return;

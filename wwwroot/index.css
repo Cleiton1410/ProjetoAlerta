@@ -3,12 +3,11 @@
     src: url('fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf') format('truetype');
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 .imagem-fundo {
@@ -24,33 +23,22 @@ body {
     z-index: -10;
 }
 
-.imagem-fundo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.26)
-}
-
 .container-geral {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .cad-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px auto;
+    margin: 10px;
     padding: 25px;
     background: #2d3b45e3;
     border-radius: 8px;
     width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
+    position: relative;
 }
 
 .titulo-cadastro {
@@ -119,11 +107,9 @@ body {
 }
 
 .triangulo {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
-    width: 0;
-    height: 0;
     border-bottom: 350px solid #2d3b45e3;
     border-right: 650px solid transparent;
     z-index: -9;
@@ -156,23 +142,27 @@ body {
 }
 
 @media (max-width: 900px) {
+
     .cad-principal {
-        width: auto;
-    }
-    .logo-fundo {
-        display: none;
+        min-width: auto;
+        position: relative;
     }
 
     .triangulo {
-        border-bottom: 200px solid #2d3b45e3;
-        border-right: 650px solid transparent;
+        position: relative;
+        border-bottom: 350px solid #2d3b45e3;
+        border-right: 275px solid #2d3b45e3;
     }
 
     .triangulo-conteudo {
-        top: 50px;
+        top: 60px;
     }
 
     .conteudo {
         font-size: 14px;
+    }
+
+    .imagem-fundo {
+        position: fixed;
     }
 }
