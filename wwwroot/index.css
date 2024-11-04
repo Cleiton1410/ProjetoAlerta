@@ -7,20 +7,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-.imagem-fundo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+body {
     background-image: url('img/ALERTA.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -10;
+    min-width: 100dvw;
+    min-height: 100dvh;
+
 }
 
 .container-geral {
@@ -45,7 +42,9 @@
     text-transform: uppercase;
     color: #fff;
     text-align: center;
-    letter-spacing: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
 }
 
 .input-group-text {
@@ -64,10 +63,12 @@
 .campos {
     width: 85%;
     padding: 8px;
+    height: 40px;
     box-sizing: border-box;
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
     border: none;
+    background: white;
 }
 
 .input-group .campos:focus {
@@ -76,16 +77,23 @@
 }
 
 .campo-termos {
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    padding: 10px; max-height: 
-    150px; overflow: auto; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 150px;
+    overflow: auto;
     width: 350px;
+    background: #3d4b55a3;
+}
+
+.label-checkbox {
+    font-size: 16px;
+    color: #fff;
 }
 
 .conteudo-termos {
     color: #fff;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 14px;
 }
 
@@ -130,7 +138,7 @@
 .conteudo {
     color: #fff;
     text-align: center;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 20px;
 }
 
@@ -139,6 +147,10 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 25px;
+}
+
+select.select-sem-valor {
+    color: #838383;
 }
 
 @media (max-width: 900px) {
@@ -160,9 +172,5 @@
 
     .conteudo {
         font-size: 14px;
-    }
-
-    .imagem-fundo {
-        position: fixed;
     }
 }

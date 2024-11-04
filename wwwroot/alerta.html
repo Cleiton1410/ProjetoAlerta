@@ -1,10 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alerta!</title>
         <link rel="stylesheet" href="alerta.css" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="favicon/site.webmanifest" />
     </head>
 
     <body>
@@ -12,30 +30,29 @@
             <div class="segundaTela">
                 <div class="logoAlerta">
                     <img
-                        src="img/logoAlerta.png"
-                        alt="logoAlerta"
-                        style="width: 350px; height: 300px"
+                        src="img/logo-md.webp"
+                        alt="ALERTA - Seus dados em risco"
+                        width="350"
                     />
                 </div>
-                <div class="listra_diagonal">
-                    <div class="listra_diagonal2">
-                        <img
-                            src="./img/listra-diagonal.png"
-                            alt="listra-diagonal"
-                            class="listra-diagonal2"
-                        />
-                        <!--Imagem da listra diagonal-->
-                    </div>
-                    <img
-                        src="./img/listra-diagonal.png"
-                        alt="listra-diagonal"
-                        class="listra-diagonal"
-                    />
-                    <!--Imagem da listra diagonal-->
-                </div>
-                <a href="previna-se.html">
-                    <button class="float-button" id="saibaMaisBtn"></button>
-                </a>
+                <!--Imagem da listra diagonal-->
+                <a
+                    href="previna-se.html"
+                    class="float-button"
+                    id="saibaMaisBtn"
+                ></a>
+
+                <!--Imagem da listra diagonal-->
+                <img
+                    src="./img/listra-diagonal.svg"
+                    aria-hidden="true"
+                    class="listra-diagonal listra-diagonal-topo"
+                />
+                <img
+                    src="./img/listra-diagonal.svg"
+                    aria-hidden="true"
+                    class="listra-diagonal listra-diagonal-baixo"
+                />
             </div>
             <!-- Botão flutuante "Saiba Mais" -->
         </main>

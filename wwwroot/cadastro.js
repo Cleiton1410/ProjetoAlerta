@@ -20,13 +20,13 @@ async function submitForm(event) {
 
     const curso = formData.get("curso");
 
-    if (!curso || curso === "0") {
+    if (!curso || curso == "0") {
         alert("Por favor, selecione um curso válido.");
         return;
     }
 
     const idade = formData.get("idade");
-    const res = {
+    const dadosUsuario = {
         curso: parseInt(formData.get("curso")),
         datanasc: idade,
         idade: calcularIdade(idade),
@@ -38,50 +38,39 @@ async function submitForm(event) {
     try {
         const response = await fetch("/api/cadastro", {
             method: "POST",
-            body: JSON.stringify(res),
+            body: JSON.stringify(dadosUsuario),
             headers: {
                 "Content-Type": "application/json",
             },
         });
 
         if (!response.ok) {
-            throw new Error("Erro ao enviar o cadastro, tente novamente mais tarde.");
-
+            throw new Error("Não foi possível enviar o cadastro, tente novamente mais tarde.");
         }
 
-        const result = await response.json();
-        console.log(result);
+        const result = await response.text();
 
         // Salvar id e dados do form no localstorage
-        const userId = JSON.parse(result).id; // Supondo que a resposta tenha um campo 'id'
+        const userId = result; // Supondo que a resposta tenha um campo 'id'
         localStorage.setItem('userId', userId);
-        salvarDados();
-        
+        localStorage.setItem('dadosCadastro', JSON.stringify(dadosUsuario));
+
         // Redirecionar para a tela secundária
         alert("Cadastro realizado com sucesso!");
         window.location.assign("alerta.html");
     } catch (error) {
-        console.error("Erro:", error);
+        console.error(error);
         alert("Erro ao cadastrar: " + error.message);
     }
 }
 
-function salvarDados() {
-    const login = document.getElementById('login').value;
-    const senha = document.getElementById('senha').value;
-    const email = document.getElementById('email').value;
-    const idade = document.getElementById('idade').value;
-    const curso = document.getElementById('curso').value;
-
-    const dadosCadastro = {
-        login: login,
-        senha: senha,
-        email: email,
-        idade: calcularIdade(idade),
-        curso: curso,
+function setarEstilosSelect() {
+    let valor = document.getElementById("curso").value
+    if (valor == "0" || !valor) {
+        document.getElementById("curso").classList.add('select-sem-valor');
+    } else {
+        document.getElementById("curso").classList.remove('select-sem-valor');
     };
-
-    localStorage.setItem('dadosCadastro', JSON.stringify(dadosCadastro));
 }
 
 // Verificar se o id do usuário está no local storage
@@ -91,4 +80,5 @@ if (localStorage.getItem('userId')) {
     document.getElementById("cadastroForm").addEventListener("submit", submitForm);
 }
 
-document.getElementById('idade').type = 'text';
+document.getElementById("curso").addEventListener("change", setarEstilosSelect);
+setarEstilosSelect();

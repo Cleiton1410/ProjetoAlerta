@@ -1,159 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Saiba Mais</title>
         <link rel="stylesheet" href="previna-se.css" />
-        
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="favicon/site.webmanifest" />
     </head>
 
     <body>
         <main>
-            <div class="img-logo-alerta">
-                <img
-                    src="./img/logo-alerta.png"
-                    alt="logo-alerta"
-                    class="logo-alerta"
-                />
-                <!--Imagem da logo Alerta-->
-            </div>
+            <img
+                src="./img/logo-md.webp"
+                alt="Logo projeto alerta"
+                class="logo-alerta"
+            />
 
             <div class="conteudo">
-                <img
-                    src="./img/listra-vertical.png"
-                    alt="listra-vertical"
-                    class="listra-vertical"
-                />
-                <!--imagem da listra vertical que fica acima do titulo-->
+                <div class="listra-horizontal" aria-hidden="true"></div>
 
                 <div class="titulo">
-                    <p class="estilo-titulo">Previna-se para que isso não aconteça</p>
+                    <h1 class="estilo-titulo">
+                        Previna-se para que isso não aconteça
+                    </h1>
                     <!--Titulo-->
                 </div>
 
-                <img
-                    src="./img/listra-vertical.png"
-                    alt="listra-vertical"
-                    class="listra-vertical"
-                />
-                <!--imagem da listra vertical que fica abaixo do titulo-->
-            </div>
+                <div class="listra-horizontal" aria-hidden="true"></div>
 
-            <div class="topico">
-                <p class="estilo-subtitulo">Dados Adquiridos:</p>
-                <p><strong>Login:</strong> <span id="loginDisplay"></span></p>
-                <p><strong>Senha:</strong> <span id="senhaDisplay"></span></p> 
-                <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
-                <p><strong>Idade:</strong> <span id="idadeDisplay"></span></p>
-                <p><strong>IP:</strong> <span id="ipDisplay"></span></p>
-            </div>
+                <section class="topico">
+                    <h2 class="estilo-subtitulo">Dados Adquiridos:</h2>
+                    <div class="estilo-texto">
+                        <div>
+                            <strong>Login:</strong>
+                            <span id="loginDisplay"></span>
+                        </div>
+                        <div>
+                            <strong>Senha:</strong>
+                            <span id="senhaDisplay"></span>
+                        </div>
+                        <div>
+                            <strong>Email:</strong>
+                            <span id="emailDisplay"></span>
+                        </div>
+                        <div>
+                            <strong>Idade:</strong>
+                            <span id="idadeDisplay"></span>
+                        </div>
+                        <div>
+                            <strong>IP:</strong> <span id="ipDisplay"></span>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="topico">
-                <p class="estilo-subtitulo">Como acontecem os golpes em redes sociais:</p>
+                <section class="topico">
+                    <h2 class="estilo-subtitulo">
+                        Como acontecem os golpes em redes sociais:
+                    </h2>
 
-                <p>
-                    <strong>Phishing:</strong> Criminosos enviam mensagens ou
-                    criam perfis falsos que imitam marcas ou amigos confiáveis,
-                    solicitando dados pessoais, como senhas e informações
-                    financeiras, através de links suspeitos. <br />
-                    <!--Topico 2-->
-                    <strong>Clonagem de perfil:</strong> Golpistas copiam a
-                    identidade de uma pessoa (foto e nome) e entram em contato
-                    com seus amigos, pedindo dinheiro ou informações sob falsos
-                    pretextos. <br />
-                    <!--Topico 3-->
-                    <strong>Engenharia social:</strong> Usam manipulação
-                    psicológica para convencer as pessoas a fornecerem dados ou
-                    realizarem transações, aproveitando-se de situações
-                    emocionais.<br />
-                    <!--Topico 4-->
-                    <strong>Golpes de sorteios falsos:</strong> Prometem prêmios
-                    ou ofertas especiais em troca de compartilhamentos, curtidas
-                    ou preenchimento de formulários, que muitas vezes capturam
-                    dados sensíveis.<br />
-                    <!--Topico 5-->
-                    <strong>Links maliciosos:</strong> Os golpistas distribuem
-                    links através de mensagens ou posts que, ao serem clicados,
-                    instalam malware ou redirecionam para sites falsos que
-                    coletam informações.
-                </p>
-            </div>
+                    <ul class="estilo-texto">
+                        <li>
+                            <strong>Phishing:</strong> Criminosos enviam
+                            mensagens ou criam perfis falsos que imitam marcas
+                            ou amigos confiáveis, solicitando dados pessoais,
+                            como senhas e informações financeiras, através de
+                            links suspeitos.
+                        </li>
+                        <!--Topico 2-->
+                        <li>
+                            <strong>Clonagem de perfil:</strong> Golpistas
+                            copiam a identidade de uma pessoa (foto e nome) e
+                            entram em contato com seus amigos, pedindo dinheiro
+                            ou informações sob falsos pretextos. <br />
+                        </li>
+                        <!--Topico 3-->
+                        <li>
+                            <strong>Engenharia social:</strong> Usam manipulação
+                            psicológica para convencer as pessoas a fornecerem
+                            dados ou realizarem transações, aproveitando-se de
+                            situações emocionais.<br />
+                        </li>
+                        <!--Topico 4-->
+                        <li>
+                            <strong>Golpes de sorteios falsos:</strong> Prometem
+                            prêmios ou ofertas especiais em troca de
+                            compartilhamentos, curtidas ou preenchimento de
+                            formulários, que muitas vezes capturam dados
+                            sensíveis.<br />
+                        </li>
+                        <!--Topico 5-->
+                        <li>
+                            <strong>Links maliciosos:</strong> Os golpistas
+                            distribuem links através de mensagens ou posts que,
+                            ao serem clicados, instalam malware ou redirecionam
+                            para sites falsos que coletam informações.
+                        </li>
+                    </ul>
+                </section>
 
-            <div class="topico">
-                <p class="estilo-subtitulo">Como evitar golpe e furto de seus dados:</p>
-                <p>
-                    <!--Topico 1-->
-                    <strong>Desconfie de mensagens suspeitas:</strong> Nunca
-                    clique em links ou faça downloads de anexos sem verificar a
-                    origem.<br />
-                    <!--Topico 2-->
-                    <strong>Verifique perfis e fontes:</strong> Confirme se o perfil é oficial ou
-                    se a pessoa que te contactou é realmente quem diz ser.<br>
-                    <!--Topico 3-->
-                    <strong>Evite compartilhar dados sensíveis:</strong> Não forneça senhas,
-                    números de cartões ou dados pessoais em chats ou formulários
-                    desconhecidos.<br>
-                    <!--Topico 4-->
-                    <strong>Use autenticação de dois fatores:</strong> Ative essa proteção extra
-                    para contas importantes.<br>
-                    <!--Topico 5-->
-                    <strong>Mantenha-se atualizado:</strong> Esteja atento aos golpes mais comuns
-                    e ajuste suas configurações de privacidade.coletam
-                    informações.
-                </p>
+                <section class="topico">
+                    <h2 class="estilo-subtitulo">
+                        Como evitar golpe e furto de seus dados:
+                    </h2>
+                    <ul class="estilo-texto">
+                        <!--Topico 1-->
+                        <li>
+                            <strong>Desconfie de mensagens suspeitas:</strong>
+                            Nunca clique em links ou faça downloads de anexos
+                            sem verificar a origem.<br />
+                        </li>
+                        <!--Topico 2-->
+                        <li>
+                            <strong>Verifique perfis e fontes:</strong> Confirme
+                            se o perfil é oficial ou se a pessoa que te
+                            contactou é realmente quem diz ser.<br />
+                        </li>
+                        <!--Topico 3-->
+                        <li>
+                            <strong>Evite compartilhar dados sensíveis:</strong>
+                            Não forneça senhas, números de cartões ou dados
+                            pessoais em chats ou formulários desconhecidos.<br />
+                        </li>
+                        <!--Topico 4-->
+                        <li>
+                            <strong>Use autenticação de dois fatores:</strong>
+                            Ative essa proteção extra para contas
+                            importantes.<br />
+                        </li>
+                        <!--Topico 5-->
+                        <li>
+                            <strong>Mantenha-se atualizado:</strong> Esteja
+                            atento aos golpes mais comuns e ajuste suas
+                            configurações de privacidade.coletam informações.
+                        </li>
+                    </ul>
+                </section>
             </div>
-            <div class="listra_diagonal">
-                <div class="listra_diagonal2">
-                    <img
-                        src="./img/listra-diagonal.png"
-                        alt="listra-diagonal"
-                        class="listra-diagonal2"
-                    />
-                    <!--Imagem da listra diagonal-->
-                </div>
-                <img
-                    src="./img/listra-diagonal.png"
-                    alt="listra-diagonal"
-                    class="listra-diagonal"
-                />
-                <!--Imagem da listra diagonal-->
-            </div>
-
-          
         </main>
+        <img
+            src="./img/listra-diagonal.svg"
+            aria-hidden="true"
+            class="listra-diagonal listra-diagonal-topo"
+        />
+        <img
+            src="./img/listra-diagonal.svg"
+            aria-hidden="true"
+            class="listra-diagonal listra-diagonal-baixo"
+        />
     </body>
     <script>
         function exibirDados() {
-            const dados = JSON.parse(localStorage.getItem('dadosCadastro'));
+            const dados = JSON.parse(localStorage.getItem("dadosCadastro"));
             if (dados) {
-                document.getElementById("loginDisplay").textContent = dados.login;
-                document.getElementById("senhaDisplay").textContent = dados.senha;
-                document.getElementById("emailDisplay").textContent = dados.email;
-                document.getElementById("idadeDisplay").textContent = dados.idade;
+                document.getElementById("loginDisplay").textContent =
+                    dados.login;
+                document.getElementById("senhaDisplay").textContent =
+                    dados.senha;
+                document.getElementById("emailDisplay").textContent =
+                    dados.email;
+                document.getElementById("idadeDisplay").textContent =
+                    dados.idade;
             }
         }
 
         window.onload = exibirDados;
 
         // Pegando o IP do usuário via uma API externa (ex: ipify)
-        fetch("https://api.ipify.org?format=json")
-            .then((response) => response.json())
+        fetch("/api/ip")
+            .then((response) => response.text())
             .then((data) => {
-                document.getElementById("ipDisplay").textContent = data.ip;
+                document.getElementById("ipDisplay").textContent = data;
             })
             .catch((error) => {
                 console.error("Erro ao obter o IP:", error);
             });
-
-        /*const cadastros = localStorage.getItem("cadastros");
-        document.getElementById("contadorDisplay").textContent = cadastros
-            ? cadastros
-            : 0;
-        */
-
-        window.addEventListener('beforeunload', function() {
-            localStorage.clear();
-        });
     </script>
 </html>

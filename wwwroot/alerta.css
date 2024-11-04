@@ -53,12 +53,15 @@ p {
 
 .float-button {
     margin-top: 20px;
-    background-color: transparent;
     border-color: transparent;
-    background-image: url(img/saibaMais.png);
+    background-color: transparent;
+    background-image: url(img/saiba-mais.svg);
+    background-size: 210px 80px;
+    fill: #f0930d;
     width: 210px;
     height: 80px;
     padding: 0;
+    transition: filter ease 100ms;
 }
 
 .float-button:hover {
@@ -70,74 +73,25 @@ p {
     position: fixed;
 }
 
-/* Listra no canto inferior esquerdo */
-.listra_diagonal {
-    width: 380px;
-    height: 350px;
-    left: 0;
-    bottom: 0;
-}
-
-/* Listra no canto superior direito */
-.listra_diagonal2 {
+.listra-diagonal {
     width: 350px;
-    height: 100px;
-    top: 0;
-    right: 0;
+    height: 300px;
+    position: absolute;
 }
 
-/* Listras Verticais */
-.listra-vertical {
-    width: 100%;
-    height: auto;
+.listra-diagonal-baixo {
+    left: -50px;
+    bottom: -50px;
 }
 
-/* Responsividade para dispositivos pequenos */
+.listra-diagonal-topo {
+    top: -50px;
+    right: -50px;
+    transform: scale(-1, -1);
+}
+
 @media (max-width: 1175px) {
-    .segundaTela {
-        flex-direction: column;
-    }
-    .img-logo-alerta {
-        position: relative;
-        text-align: center;
-    }
-    .conteudo {
-        text-align: center;
-        margin-left: 5%;
-        max-width: 100%;
-    }
-    .listra-vertical {
-        max-width: 100%;
-        height: auto;
-    }
-    .topico {
-        margin: 20px auto;
-        max-width: 90%;
-        margin-left: 5%;
-    }
-
-    .listra_diagonal, .listra_diagonal2 {
+    .listra-diagonal {
         display: none; /* Esconde as listras em telas menores */
-    }
-}
-
-@media (max-width: 320px) {
-    .img-logo-alerta {
-        text-align: center;
-    }
-    .conteudo {
-        text-align: center;
-        margin-left: 5%;
-        max-width: 100%;
-    }
-
-    .topico {
-        margin: 20px auto;
-        margin-left: 5%;
-        max-width: 100%;
-    }
-
-    .listra_diagonal, .listra_diagonal2 {
-        display: none;
     }
 }
