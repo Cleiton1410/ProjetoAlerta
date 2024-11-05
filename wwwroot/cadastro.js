@@ -82,3 +82,13 @@ if (localStorage.getItem('userId')) {
 
 document.getElementById("curso").addEventListener("change", setarEstilosSelect);
 setarEstilosSelect();
+
+$(document).ready(function() {
+    $("#idade").datepicker({
+        dateFormat: "dd/mm/yy",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1950:2030",
+        showButtonPanel: true
+    });
+});
