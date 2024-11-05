@@ -25,11 +25,18 @@ async function submitForm(event) {
         return;
     }
 
-    const idade = formData.get("idade");
+    const nascString = formData.get("idade").split('/')
+    const datanasc = new Date(parseInt(nascString[2]), parseInt(nascString[1]) - 1, parseInt(nascString[0]));
+    const idadeAnos = calcularIdade(datanasc);
+
+    if (isNaN(datanasc) || idadeAnos < 10 || idadeAnos > 100) {
+        throw new Error("Data de nascimento inválida");
+    }
+    const data = new Date(datanasc);
     const dadosUsuario = {
         curso: parseInt(formData.get("curso")),
-        datanasc: idade,
-        idade: calcularIdade(idade),
+        datanasc: `${data.getFullYear()}-${data.getMonth()}-${data.getDate()}`,
+        idade: idadeAnos,
         email: formData.get("email"),
         login: formData.get("login"),
         senha: formData.get("senha"),
@@ -88,7 +95,7 @@ $(document).ready(function() {
         dateFormat: "dd/mm/yy",
         changeMonth: true,
         changeYear: true,
-        yearRange: "1950:2030",
+        yearRange: "1930:2014",
         showButtonPanel: true
     });
 });
