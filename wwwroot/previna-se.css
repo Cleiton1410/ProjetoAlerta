@@ -11,8 +11,8 @@ body {
 
 main {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 25px;
+    padding-top: 25px;
+    position: relative;
 }
 
 @font-face {
@@ -49,14 +49,19 @@ main {
 
 li {
     list-style: none;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+li strong {
+    font-size: 17px;
 }
 
 /* Conteúdo principal */
 .conteudo {
     margin: 10px auto;
-    width: 555px;
-    max-width: 95vw;
+    width: calc(100vw - 720px);
+    min-width: 555px;
+    max-width: 90vw;
     padding: 5px;
 }
 
@@ -74,6 +79,10 @@ li {
 /* Topico */
 .topico {
     margin: 20px auto;
+}
+
+.topico>*:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .listra-diagonal {
@@ -116,7 +125,9 @@ li {
 
     .conteudo {
         margin: 20px auto;
-        max-width: 95%;
+        width: 555px;
+        min-width: 300px;
+        max-width: 97vw;
     }
     .listra-horizontal {
         max-width: 95%;
