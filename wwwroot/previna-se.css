@@ -3,148 +3,136 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     background-color: #222221;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-  
-  main {
+}
+
+main {
     display: flex;
     flex-wrap: wrap;
     margin-top: 25px;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "Rustic";
-    src: url(./fontes/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
-  }
-  
-  @font-face {
+    src: url(./fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
+}
+
+@font-face {
     font-family: "Glacial";
-    src: url(./fontes/GlacialIndifference-Regular.otf) format("opentype");
-  }
-  
-  h1 {
+    src: url(./fonts/GlacialIndifference-Regular.otf) format("opentype");
+}
+
+.estilo-titulo {
     font-size: 36px;
+    font-weight: normal;
     font-family: Rustic;
     color: #f0930d;
-  }
-  
-  h2 {
+    line-height: 1;
+    margin: 9px auto;
+}
+
+.estilo-subtitulo {
     font-family: Rustic;
+    font-weight: normal;
     color: #f0930d;
-  }
-  
-  p {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.estilo-texto {
     font-family: Glacial;
-    color: white;
-  }
-  
-  /* Conteúdo principal */
-  .conteudo {
+    color: whitesmoke;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 4px;
+}
+
+/* Conteúdo principal */
+.conteudo {
     margin: 10px auto;
-    margin-left: 33.5%;
     width: 555px;
+    max-width: 95vw;
     padding: 5px;
-  }
-  
-  .img-logo-alerta {
+}
+
+.img-logo-alerta {
     position: absolute;
-  }
-  
-  .logo-alerta {
-    margin-left: 25px;
+}
+
+.logo-alerta {
     width: 200px;
-  }
-  
-  /* Topico */
-  .topico {
+    position: absolute;
+    top: 0;
+    left: 25px;
+}
+
+/* Topico */
+.topico {
     margin: 20px auto;
-    margin-left: 33.5%;
-    width: 555px;
-    padding: 5px;
-  }
-  
-  /* Listras Diagonais - Usando Position Absolute */
-  .listra_diagonal,
-  .listra_diagonal2 {
-    position:fixed;
-    margin-top: -25px;
-  }
-  /* Listra no canto inferior esquerdo */
-  .listra-diagonal {
-    margin-top: 175%;
-    width: 380px;
-    margin-left:0px ;
-  }
-  
-  /* Listra no canto superior direito */
-  .listra-diagonal2 {
+}
+
+.listra-diagonal {
     width: 350px;
-    height: auto;
-    margin-top: 150;
-    margin-left: 1600.00px;
-  }
-  
-  /* Listras Verticais */
-  .listra-vertical {
+    height: 300px;
+    position: absolute;
+}
+
+.listra-diagonal-baixo {
+    left: 0px;
+    bottom: 0px;
+}
+
+.listra-diagonal-topo {
+    top: 0px;
+    right: 0px;
+    transform: scale(-1, -1);
+}
+
+/* Listras Verticais */
+.listra-horizontal {
+    background-color: transparent;
+    background-image: url(img/listra-horizontal.svg);
+    background-repeat: repeat-x;
     width: 100%;
-    height: auto;
-  }
-  
-  /* Responsividade para dispositivos pequenos */
-  @media (max-width: 1175px) {
+    height: 8px;
+    object-fit: cover;
+}
+
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 1175px) {
     main {
-      flex-direction: column;
+        flex-direction: column;
     }
-    .img-logo-alerta {
-      position: relative;
-      text-align: center;
+
+    .logo-alerta {
+        margin: auto;
+        position: static;
     }
+
     .conteudo {
-      text-align: center;
-      margin-left: 5%;
-      max-width: 100%;
+        margin: 20px auto;
+        max-width: 95%;
     }
-    .listra-vertical {
-      max-width: 100%;
-      height: auto;
+    .listra-horizontal {
+        max-width: 95%;
     }
-    .topico {
-      margin: 20px auto;
-      max-width: 90%;
-      margin-left: 5%;
+
+    .listra-diagonal {
+        display: none; /* quando a tela for menor que 1175px as listras desapareceram */
     }
-  
-    .listra-diagonal,
-    .listra-diagonal2 {
-      display: none; /* quando a tela for menor que 1175px as listras desapareceram */
-    }
-  }
-  
-  @media (max-width: 320px) {
-    .img-logo-alerta {
-      text-align: center;
-    }
+}
+
+@media (max-width: 320px) {
     .conteudo {
-      text-align: center;
-      margin-left: 5%;
-      max-width: 100%;
+        max-width: 100%;
     }
-  
-    .topico {
-      margin: 20px auto;
-      margin-left: 5%;
-      max-width: 100%;
+
+    .listra-diagonal {
+        display: none; /* quando a tela for menor que 320px as listras desapareceram */
     }
-  
-    .listra-diagonal,
-    .listra-diagonal2 {
-      display: none; /* quando a tela for menor que 320px as listras desapareceram */
-    }
-  }
-  
+}
