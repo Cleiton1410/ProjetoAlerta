@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Rustic";
+    src:
+        url("/fonts/fontsfree-net-rustic-printed-stamp-webfont.woff2") format("woff2"),
+        url("/fonts/fontsfree-net-rustic-printed-stamp-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Glacial";
+    src:
+        url("/fonts/glacialindifference-regular-webfont.woff2") format("woff2"),
+        url("/fonts/glacialindifference-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+

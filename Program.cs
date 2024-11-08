@@ -38,9 +38,9 @@ app.MapGet("/api/listar-todos", async context =>
         {
             result.Add(new Dado
             {
-                id = row.Field<int>(data.Columns[0]),
-                idade = row.Field<int>(data.Columns[1]),
-                curso = (Curso)row.Field<int>(data.Columns[2])
+                id = row.Field<long>(data.Columns[0]),
+                idade = row.Field<long>(data.Columns[1]),
+                curso = (Curso)row.Field<long>(data.Columns[2])
             });
         }
         await context.Response.WriteAsJsonAsync(result);
@@ -76,7 +76,7 @@ app.MapPost("/api/cadastro", async (context) => {
         await context.Response.WriteAsync("Dados Inválidos");
         return;
     }
-    int id = await db.InsertDado(pessoa.curso, pessoa.idade);
+    long id = await db.InsertDado(pessoa.curso, pessoa.idade);
     await context.Response.WriteAsync(id.ToString());
 });
 

@@ -21,17 +21,6 @@ body {
     height: 100vh;
 }
 
-/* Fonte e cores */
-@font-face {
-    font-family: "Rustic";
-    src: url(./fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "Glacial";
-    src: url(./fonts/GlacialIndifference-Regular.otf) format("opentype");
-}
-
 h1, h2 {
     font-size: 36px;
     font-family: "Rustic";

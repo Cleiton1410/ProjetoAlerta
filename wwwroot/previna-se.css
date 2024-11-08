@@ -15,16 +15,6 @@ main {
     position: relative;
 }
 
-@font-face {
-    font-family: "Rustic";
-    src: url(./fonts/FontsFree-Net-Rustic-Printed-Stamp.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "Glacial";
-    src: url(./fonts/GlacialIndifference-Regular.otf) format("opentype");
-}
-
 .estilo-titulo {
     font-size: 36px;
     font-weight: normal;

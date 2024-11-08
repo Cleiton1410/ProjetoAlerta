@@ -22,7 +22,7 @@ public class BancoDados
         cmd.ExecuteNonQuery();
     }
 
-    public async Task<int> InsertDado(Curso curso, int idade) {
+    public async Task<long> InsertDado(Curso curso, long idade) {
         SQLiteCommand cmd;
         cmd = sqlite.CreateCommand();
         cmd.CommandText = @"

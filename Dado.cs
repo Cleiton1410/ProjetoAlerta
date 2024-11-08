@@ -5,9 +5,9 @@ namespace ProjetoAlertaServer;
 public class Dado
 {
     [JsonInclude]
-    public int id;
+    public long id;
     [JsonInclude]
-    public required int idade;
+    public required long idade;
     [JsonInclude]
     public required Curso curso;
 }

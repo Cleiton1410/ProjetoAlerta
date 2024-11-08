@@ -81,11 +81,11 @@ function setarEstilosSelect() {
 }
 
 // Verificar se o id do usuário está no local storage
-if (localStorage.getItem('userId')) {
-    window.location.assign("alerta.html");
-} else {
+// if (localStorage.getItem('userId')) {
+//     window.location.assign("alerta.html");
+// } else {
     document.getElementById("cadastroForm").addEventListener("submit", submitForm);
-}
+// }
 
 document.getElementById("curso").addEventListener("change", setarEstilosSelect);
 setarEstilosSelect();
